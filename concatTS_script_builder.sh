@@ -1,22 +1,26 @@
 #!/system/bin/sh
-check="$(ls $(dirname $(realpath $0))/rev/*.ts)"
-cd $(dirname $(realpath $0))
+conc="$(dirname $(realpath $0))"
+check="$(ls $conc/rev/*.ts)"
 if [ -z "$check" ]
 then
-echo "No video.ts"
+echo "Please Convert mp4 to ts first if available.."
 kill -9 $$
 fi
-#### script ts video merge generator ####
-ls $(dirname $(realpath $0))/rev/*.ts > ./0con.log
-echo "x \"\$(dirname \$0)\"/\"\$(date +%s)\".4" >> ./0con.log
-cat 0con.log|busybox tr '\n' '|' > ./1con.log
-busybox sed -i "s|\|x|\" -c copy |g" ./1con.log
-busybox sed -i "s|4\||mkv|g" ./1con.log
-echo "ffmpeg -i \"concat" > ./ffmpeg.log
-cat ./1con.log >> ./ffmpeg.log
-cat ./ffmpeg.log|busybox tr '\n' ':' > ./conFfmpeg.log
-echo "#!/system/bin/sh" > $(dirname $(realpath $0))/mergets.sh
-cat ./conFfmpeg.log >> $(dirname $(realpath $0))/mergets.sh
-echo "\n" >> $(dirname $(realpath $0))/mergets.sh
-/system/bin/sh $(dirname $(realpath $0))/mergets.sh
-echo "$(basename $0) executed.."
+
+ls $conc/rev/*.ts > $conc/0con.log
+echo "#!/system/bin/sh" > $conc/header
+str0="ffmpeg -i \"concat:"
+str1="$(cat $conc/0con.log)"
+str2="\" -c copy \$(dirname \$(realpath \$0))/$(date +%s).mkv"
+busybox echo -n $str1 > $conc/conlog2.txt
+busybox sed -i "s| |\||g" $conc/conlog2.txt
+###
+str3="$(cat $conc/conlog2.txt)"
+#busybox sed -i "s|\|x|\" -c copy |g" $conc/1con.log
+#busybox sed -i "s|4\||mkv|g" $conc/1con.log
+cat $conc/header > $conc/mergeTs.sh
+#echo "$str0" >> "mergeTs.sh"
+echo -n $str0$str3$str2 >> $conc/mergeTs.sh
+sleep 3
+/system/bin/sh "$conc/mergeTs.sh"
+echo "0ke..."
