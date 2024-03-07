@@ -1,12 +1,12 @@
 Ini adalah skrip-skrip shell di android untuk membantu memudahkan alat ffmpeg membagi satu video/mp4 ke beberapa bagian video/mp4 sesuai waktu pada subrip/srt yang diberikan (harus extensi .srt dengan waktu yang sesuai)
 tinggal jalankan saja
 <pre>
-sh ./run-all.sh
+sh ./run-all.sh /full-path/files.srt /full-path/files.mp4
 </pre>
 ....
 Untuk tujuan membalik putaran video,
 jalankan (harus jalankan run-all.sh dahulu)
-<pre>sh ./reverse2All.sh</pre>
+<pre>sh ./reverse2All.sh /full-path/files.srt</pre>
 
 Pemutaran video terbalik berguna untuk melewati klaim konten id di youtube.
 
