@@ -9,11 +9,13 @@ jalankan (harus jalankan run-all.sh dahulu)
 <pre>sh ./reverse2All.sh /full-path/files.srt</pre>
 
 Pemutaran video terbalik berguna untuk melewati klaim konten id di youtube.
+unggah dahulu konten film ke youtube untuk mengujinya.
+jika ditandai merah (diblokir di semua negara). gunakan skrip dari sini.
 
-cara membalik video di sini bukan dari awal sampai akhir video secara penuh.
+cara membalik video di sini bukan dari awal sampai akhir video secara penuh (a to z).
 cara membalik video secara penuh akan mengacaukan alur adegan pada video.
 jadi di sini, kita harus membagi video ke beberapa bagian.
-dari bagian itu kita akan balikan pemutaran.
+dari bagian itu kita akan balikan pemutarannya/reversing.
 setelah semua dibalik, lalu akan digabungkan kembali
 
 perhatikan contoh video youtube di bawah
@@ -23,3 +25,4 @@ perhatikan contoh video youtube di bawah
 jika video diatas langsung diunggah ke youtube, tidak mungkin akan bisa dipublikasikan untuk ditonton.
 
 perangkat kamu harus terinstall ffmpeg android.
+untuk pertanyaan hubungi <a href="https://facebook.com/zvryzaqy">zvryzaqy<>
