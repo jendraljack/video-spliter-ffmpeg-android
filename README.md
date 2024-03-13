@@ -25,4 +25,4 @@ perhatikan contoh video youtube di bawah
 jika video diatas langsung diunggah ke youtube, tidak mungkin akan bisa dipublikasikan untuk ditonton.
 
 perangkat kamu harus terinstall ffmpeg android.
-untuk pertanyaan hubungi <a href="https://facebook.com/zvryzaqy">zvryzaqy<>
+untuk pertanyaan hubungi <a href="https://facebook.com/zvryzaqy">zvryzaqy</a>
